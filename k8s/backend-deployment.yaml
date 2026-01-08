@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: medsalemabdi/consumesafe-backend:latest
+          ports:
+            - containerPort: 8082
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/boycott_db
+            - name: SPRING_DATASOURCE_USERNAME
+              value: boycott_user
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: boycott_pass
+            - name: HUGGINGFACE_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: hf-secret
+                  key: HUGGINGFACE_API_TOKEN
