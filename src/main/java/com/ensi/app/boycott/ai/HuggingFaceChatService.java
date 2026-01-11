@@ -13,7 +13,7 @@ import java.util.Map;
 @Service
 public class HuggingFaceChatService {
 
-    @Value("${huggingface.api.token}")
+    @Value("######")
     private String apiToken;
 
     private static final String API_URL =

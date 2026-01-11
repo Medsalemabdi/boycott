@@ -16,7 +16,7 @@ public class DataLoader {
 
                 repo.save(new Product(null, "Coca-Cola", true, "Boga Cola"));
                 repo.save(new Product(null, "Pepsi", true, "Selecto"));
-                repo.save(new Product(null, "Danone", true, "Natilait"));
+                repo.save(new Product(null, "Danone", true, "Vitalait"));
                 repo.save(new Product(null, "Nestlé", true, "Lella"));
                 repo.save(new Product(null, "Safia", false, null)); // tunisien, non boycotté
 
